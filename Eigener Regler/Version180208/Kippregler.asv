@@ -1,0 +1,31 @@
+Roboterdaten
+
+s = tf('s')
+
+Gkipp = -201.6 /((s+14.05)*(s-14.05))
+
+Gmotor = 80/(s+80)
+
+Gs1 = Gmotor*Gkipp
+k=-1
+Tv = 1/14.05
+
+Rpd = k *(Tv*s + 1)
+
+%k= 3
+
+% Mi =
+% 
+%   122.5927   44.5154  -75.8863
+%    44.5154  122.5927  -75.8863
+%   -75.8863  -75.8863  125.6867
+
+Gphip = 318.9/s+ 48061/(s^3-197.35*s)
+
+Gvor = Gmotor * Gphip * r/2
+
+Gges = Gmotor * Gphip * r/2 * (-Rpd)
+
+Gs2 = Gvor / (1-Gges)
+
+simplify
