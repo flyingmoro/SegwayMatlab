@@ -3,8 +3,8 @@ function Mout = Minv( p )
 %   Detailed explanation goes here
 % p(1) = phi1pp, p(2) = phi2pp p(3) = betapp
 m_Rad = 0.2;
-r = 0.1;
-r_i = 50*10^(-3);
+r = 0.05;
+r_i = 25*10^(-3);
 b_Rad = 0.042;
 
 J_yRad = m_Rad * (r^2+r_i^2) / 2;
@@ -33,6 +33,6 @@ M = [ sig1, sig2, h_SA * m_Ro * r /2;...
 
 Mi = inv(M);
   
-Mout = Mi * p
+Mout = Mi * p ;
 end
 
